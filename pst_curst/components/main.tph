@@ -1,0 +1,24 @@
+// Proof of concept: Shimmer, a silent ghostly apparition in the Mortuary starting room (AR0202).
+
+PRINT @3
+
+// Base on the unused Mortuary Ghost CRE (animation STAR_Mortuary_Ghost / 0xD400).
+COPY_EXISTING ~mrtghost.cre~ ~override/pcshimr.cre~
+  SAY NAME1 @1010
+  SAY NAME2 @1010
+  WRITE_ASCII DIALOG ~pcshimr~ #8
+  WRITE_ASCII DEATHVAR ~pcshimr~ #32
+  WRITE_ASCII SCRIPT_OVERRIDE ~~ #8
+  WRITE_ASCII SCRIPT_CLASS ~~ #8
+  WRITE_ASCII SCRIPT_RACE ~~ #8
+  WRITE_ASCII SCRIPT_GENERAL ~~ #8
+  WRITE_ASCII SCRIPT_DEFAULT ~~ #8
+  // Neutral, non-combat prop: keep EA 128 from the template.
+BUT_ONLY
+
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialog/pcshimr.d~
+  USING ~%MOD_FOLDER%/languages/%LANGUAGE%/setup.tra~
+
+EXTEND_BOTTOM ~ar0202.bcs~ ~%MOD_FOLDER%/scripts/ar0202_shimmer.baf~
+
+PRINT @4

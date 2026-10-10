@@ -1,0 +1,37 @@
+# WeiDU / install artifacts (never ship these)
+backup/
+weidu_external/
+*.debug
+debugs/
+WeiDU.log
+Setup-*.exe
+setup-*.exe
+weidu.exe
+weidu
+weidu.command
+
+# Local tooling / extracted game samples (not part of the mod)
+tools/weidu/
+tools/weidu.zip
+tools/extracted/
+
+# Packaging / OS noise
+__macosx/
+$RECYCLE.BIN/
+temp/
+tmp/
+*.bak
+*.tmp
+*.lnk
+Thumbs.db
+ehthumbs.db
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Release archives (build locally / via CI)
+*.7z
+*.rar
+*.zip
+*.tar.gz
+*.iemod

@@ -1,0 +1,29 @@
+BACKUP ~weidu_external/backup/pst_curst~
+SUPPORT ~https://github.com/error902/pst-curst-mod/issues~
+VERSION ~0.2.0~
+AUTO_EVAL_STRINGS
+
+README ~pst_curst/readme/readme.html~ ~README.md~
+
+ALWAYS
+  OUTER_SET IS_PSTEE = (GAME_IS ~pstee~)
+  OUTER_SET IS_PST = (GAME_IS ~pst~)
+
+  // When you add non-ASCII TRA or more languages, convert UTF-8 TRA for classic PST
+  // with HANDLE_CHARSETS (see PST-UB-reloaded or EE Fixpack for a full example).
+END
+
+LANGUAGE
+  ~English~
+  ~english~
+  ~pst_curst/languages/english/setup.tra~
+
+////////////////////////////////////////////////////////////////////////////////
+BEGIN @1 DESIGNATED 100
+LABEL ~pst_curst-main~
+REQUIRE_PREDICATE GAME_IS ~pst pstee~ @2
+////////////////////////////////////////////////////////////////////////////////
+
+WITH_SCOPE BEGIN
+  INCLUDE ~%MOD_FOLDER%/components/main.tph~
+END
